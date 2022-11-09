@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toan tu 3</title>
+</head>
+<body>
+
+<input id="login">
+<button onclick="send()">Send</button>
+
+<script>
+
+    function send(){
+        let message =document.getElementById('login').value;
+        let check =
+            message === 'Employee' ? 'hello' :
+                message === 'Director' ? 'Greeting' :
+                    message === '' ? 'NoData' : 'NoLogin';
+        document.write(check);
+    }
+
+</script>
+</body>
+</html>
