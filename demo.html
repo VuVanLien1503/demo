@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h1 class="test">1</h1>
+<h1 class="test">2</h1>
+<h1 id="demo">mầu sắc thay đổi trên Dom</h1>
+<p id="demo1"> Thay đổi kích thước </p>
+<p id="demo2"> an phan tu tren DOM .style.display='none'</p>
+<button id="demo3">Sử dụng eventListener để gán một sự kiện onclick cho phần tử button.</button>
+
+
+<body>
+<script>
+ function myFunction() {
+   document.getElementById('demo').style.color='red'
+   document.getElementById('demo2').style.display = 'none'
+
+
+ }
+
+      document.getElementsByClassName("test")[0].innerHTML
+            = "className";
+      document.getElementsByTagName("h1")[1].innerHTML
+            = "Hello";
+      document.getElementById('demo1').style.fontSize ="40px"
+      document.getElementById("demo3").addEventListener("click", myFunction);
+
+
+
+  let i = 0;
+  let sum = 0;
+  do{
+  sum+=i;
+  i++
+}
+while (i<=5)
+console.log(i)
+console.log(sum);
+
+// for (i=0;i<=5;i++){
+//   sum+=i
+//   console.log(i)
+//   console.log(sum)
+// }
+
+</script>
+</body>
+</html>

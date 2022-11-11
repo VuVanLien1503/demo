@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LuyenTap1</title>
+</head>
+<body>
+<div>
+    <p>
+        Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100.<br>
+        Khi số là 99, hiển thị hộp thoại thông báo <br>
+        là đã hoàn thành.
+    </p><br>
+    <button onclick="functionBai1()">Bai Lam
+    </button>
+<p id="bai1" ></p>
+
+</div>
+<div>
+    <p>
+        Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.<br>
+        Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, <br>
+        yêu cầu người dùng tăng nhiệt độ.
+    </p>
+    <button onclick="functionBai2()">LamBai2</button>
+</div>
+<div>
+    <p>Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</p>
+    <button onclick="functionBai3()">LamBai3</button>
+</div>
+<div>
+    <p>
+        Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    </p>
+    <button onclick="functionBai4()">LamBai4</button>
+</div>
+<div>
+    <p>
+        Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+    </p>
+    <button onclick="functionBai5()"> BaiLam</button>
+</div>
+<div>
+    <p>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</p>
+    <button onclick="functionBai6()">BaiLam
+
+    </button>
+</div>
+<div>
+    <p>Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. <br>
+        Nhưng nếu số chia hết cho 3 thì in ra "Fizz", <br>
+        5 thì in ra "Buzz" thay vì in ra số đó. <br>
+        nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</p>
+    <button onclick="functionBai7()">BaiLam
+
+    </button>
+</div>
+<div>
+    <p>Bài 8: Game đoán số</p>
+    <button onclick="functionBai8()">
+
+    </button>
+</div>
+
+
+</body>
+<script>
+    function functionBai1(){
+        for (let i=0;i<=100;i++) {
+          console.log(i);
+            if (i === 99) {
+                document.getElementById("bai1").innerHTML= 'i'+'='+ i + ''+ " done";
+                continue;
+            }
+        }
+    }
+    function functionBai2(){
+        let temperature = parseInt(prompt('Nhiệt độ hiện tại'));
+        if (temperature >=100) {
+            temperature = parseInt(prompt('Xin Hạ Nhiệt Độ'));
+        }else if (temperature <= 20 || temperature==0) {
+            temperature = parseInt(prompt('Tăng Nhiệt Độ'));
+        }else {
+            alert("oke")
+        }
+    }
+    function functionBai3() {
+        for (let i = 0,j=1 ,k=0;k <=20 ;k++){
+            let sum=i+j;
+            document.write(' '+ sum);
+            i=j;
+            j=sum;
+        }
+    }
+    function functionBai4() {
+        for (let i = 0,j=1 ,k=0;k <=20 ;k++){
+            let sum =i+j;
+            i=j;
+            j=sum;
+            if (sum % 5 ===0){
+                document.write('So dau Tien fibonacci chia het cho 5 la : '+sum)
+                break;
+            }
+
+        }
+    }
+    function functionBai5() {
+        let sumFibonacci=0;
+        for (let i = 0,j=1 ,k=0;k <=20 ;k++){
+            let sum =i+j;
+            i=j;
+            j=sum;
+            sumFibonacci += sum ;
+        }
+document.write('Tong Cua 20 so Fibonacci dau tien = '+sumFibonacci)
+    }
+    function functionBai6(){
+            let number=1,sum=0,count=0;
+            while (count!==30){
+                if (number % 7 ===0){
+                    sum += number;
+                    document.write(number+"+")
+                    count++;
+                    number++;
+
+                }else {
+                    number++;
+                }
+                console.log(" Number"+ number);
+            }
+            document.write( " Tong 30 so  chia het cho 7 dau tien cua day so fibonacci : "+ sum);
+
+    }
+    function functionBai7(){
+            for (let i=1;i<=100;i++){
+                if (i % 3===0&& i%5===0){
+                    document.write("FizzBuzz"+"<br>")
+                }else if (i%3==0){
+                    document.write("Fizz"+"<br>")
+                }else if (i % 5 ===0){
+                    document.write("Buzz"+"<br>")
+                }else {
+                    document.write(i+'<br>');
+                }
+            }
+    }
+    function functionBai8(){
+        
+    }
+
+</script>
+</html>
