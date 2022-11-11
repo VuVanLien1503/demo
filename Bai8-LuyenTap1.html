@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Game Doan So:</h1>
+    <button onclick="starGame()"> Bat Dau </button>
+<p id="inPut"> GoodLuck</p>
+<p id="outPut"></p>
+</body>
+<script>
+    function starGame() {
+        let ranDomNumber = parseInt(Math.random() * 10);
+        let inputNumber = parseInt(prompt("Nhan so  ban yeu thich 1 - 10 : "));
+        for (let i = 0; i <= 1; i++) {
+            if (ranDomNumber === inputNumber) {
+                document.getElementById("inPut").innerHTML = " So Truong Trinh : "+ranDomNumber
+                document.getElementById("outPut").innerHTML = " Wow..! Ban That May man"
+                break;
+            } else if (inputNumber>ranDomNumber) {
+                inputNumber = parseInt(prompt("So Ban Chon Lon Hon...!"))
+            }else {
+                inputNumber = parseInt(prompt("So Ban Chon nho Hon...!"))
+            }
+            document.getElementById("inPut").innerHTML = " So Truong Trinh :  "+ranDomNumber;
+        }
+    }
+
+</script>
+</html>
