@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop 2 </title>
+</head>
+<body>
+<div>
+  <p>Tinh Giai Thua cua 1 So nguyen duong</p><br>
+  <input PLACEHOLDER="Nhap so Tinh Giai Thua" id="input1"><br>
+  <p id="result"></p><br>
+  <button onclick="bai1()">BaiLam</button><br>
+</div>
+<div>
+  <p>
+    Bài 3: In tam giác vuông.<br>
+    Các góc vuông nằm ở các vị trí khác nhau
+  </p>
+  <button onclick="bai3()">BaiLam</button>
+  <button onclick="bai32()">BaiLam</button>
+  <p id="result3"></p>
+</div>
+<div>
+  <p> Bai 4 LaiXuatNganHang</p>
+  <input id="money" PLACEHOLDER="So tien"> <input id="month" type="number"PLACEHOLDER="Thang" style="width: 60px"><br><br>
+  <button onclick="bai4()"> Check </button><br>
+  <p id="result4"></p>
+  Số_tiền_lãi = Số_tiền_gửi *  tỉ_lệ_lãi_suất (% năm) / 12 * số_tháng_gửi
+</div>
+</body>
+<script>
+  function bai1() {
+    let number = +document.getElementById("input1").value;
+    let result =number;
+    if (number===0 || number===1){
+      result=1;
+      document.getElementById("result").innerHTML=result;
+
+    }else {
+      while (number>1){
+        number--;
+        result *= number;
+      }
+      document.getElementById("result").innerHTML=result;
+    }
+  }
+  function bai3(){
+    let i=0;
+    let j=0;
+    let sum="";
+    for ( i=0; i<5;i++){
+     sum+="*";
+      for (j=i;j>0;j--){
+        sum += "*";
+      }
+      sum+="<br>";
+    }
+    document.getElementById("result3").innerHTML=sum;
+  }
+  function bai32(){
+    let i=0;
+    let j=0;
+    let sum="";
+    for ( i=5; i>0;i--){
+     sum+="*";
+      for (j=i-1;j>0;j--){
+        sum += "*";
+      }
+      sum+="<br>";
+    }
+    document.getElementById("result3").innerHTML=sum;
+  }
+  function bai4(){
+    let money = +document.getElementById("money").value;
+    let month = +document.getElementById("month").value;
+    let result=0;
+    if (money>0) {
+      if (month <= 6) {
+        result = money*(0.5/12)*month;
+        document.getElementById("result4").innerHTML = result;
+      }
+      if (month <= 12) {
+        result = (money * (1 + (0.06 / 12)) * (12 * month)) - money;
+        document.getElementById("result4").innerHTML = result;
+      } else {
+        result = (money * (1 + (0.07 / 12)) * (12 * month)) - money;
+        document.getElementById("result4").innerHTML = result;
+      }
+    }
+  }
+
+</script>
+</html>
